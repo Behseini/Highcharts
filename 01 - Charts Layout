@@ -1,0 +1,14 @@
+Here is the High Chart API
+http://api.highcharts.com/highcharts#xAxis
+
+      Y  |
+ (yAxis) |
+         |
+         |
+         |
+         |
+         |
+         |
+         |_ _ _ _ _ _ _ _ _ _ _ _ _  X (xAxis)
+         
+The Y axis or value axis. Normally this is the vertical axis, though if the chart is inverted this is the horizontal axis. In case of multiple axes, the yAxis node is an array of configuration objects.
