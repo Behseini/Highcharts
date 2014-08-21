@@ -1,0 +1,61 @@
+http://jsfiddle.net/Behseini/zasn3mux/
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<button id="btnPrint">Quick Print</button>
+<button id="btnJpeg">JPEG Export</button>
+<button id="btnPng"  attr="image">PNG Export</button>
+<button id="btnPdf"  attr="pdf">PDF Export</button>
+<button id="btnSvg"  attr="pdf">SVG Export</button>
+<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+
+
+$(function () {
+    chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container'
+        },
+
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+
+        series: [{
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        }]
+    });
+    $("#btnPrint").on('click', function (event) {
+
+        chart1.print();
+
+    });
+
+    $("#btnJpeg").on('click', function (event) {
+        chart1.exportChart({
+            type: "image/jpeg"
+        });
+    });
+
+    $("#btnPng").on('click', function (event) {
+        chart1.exportChart({
+            type: "image/png"
+        });
+    });
+    $("#btnPdf").on('click', function (event) {
+        chart1.exportChart({
+            type: "application/pdf"
+        });
+    });
+    $("#btnSvg").on('click', function (event) {
+        chart1.exportChart({
+            type: "application/svg"
+        });
+    });
+});
+
+
+.highcharts-button {
+    display:none;
+}
