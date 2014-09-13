@@ -1,0 +1,9 @@
+http://jsfiddle.net/Behseini/oqsmqvan/
+
+
+    $("#btnPdf").on('click', function (event) {
+        chart1.exportChart({
+            type: "application/pdf",
+            filename: "salam"
+        });
+    });
