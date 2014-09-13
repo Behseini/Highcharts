@@ -2,8 +2,40 @@ http://jsfiddle.net/Behseini/oqsmqvan/
 
 
     $("#btnPdf").on('click', function (event) {
-        chart1.exportChart({
+        chart1.exportChart(
+        {
             type: "application/pdf",
             filename: "salam"
-        });
+        },
+        {
+            title: {
+                     text: 'My custom title'
+            },
+            subtitle: {
+                     text: 'My custom subtitle'
+            }
+        }
+        );
+    });
+
+
+var filename = "";
+var chartTitle  = "";
+var chartSubTitle = "";
+
+    $("#btnPdf").on('click', function (event) {
+        chart1.exportChart(
+        {
+            type: "application/pdf",
+            filename: filename
+        },
+        {
+            title: {
+                     text: chartTitle
+            },
+            subtitle: {
+                     text: chartSubTitle
+            }
+        }
+        );
     });
