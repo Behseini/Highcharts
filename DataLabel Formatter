@@ -1,0 +1,13 @@
+plotOptions: {
+    line: {
+        dataLabels: {
+            enabled: function() {
+                return !!(chart.series.length > 3);
+            },
+            color: '#000000',
+            formatter: function() {
+                return Highcharts.numberFormat(this.y, 2);
+            }
+        }
+    }
+}
